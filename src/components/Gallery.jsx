@@ -23,7 +23,7 @@ const Gallery = () => {
           onChange={(e) => setLimit(e.target.value)}
         />
         <button
-          className="px-4 py-1 bg-purple-400 rounded-lg mt-2 text-white"
+          className="px-4 py-1 bg-purple-400 hover:bg-purple-600  rounded-lg mt-2 text-white"
           onClick={() => dispatch(getData(limit))}
         >
           Submit
@@ -32,16 +32,16 @@ const Gallery = () => {
       {error ? (
         <div>{error}</div>
       ) : loading ? (
-        <div className="grid grid-cols-4 gap-4 mt-4">
-          {Array(1, 2, 3, 4, 5).map((index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-4">
+          {Array(1, 1, 1, 1, 1, 1, 1, 1).map((value, index) => (
             <div className="px-2 py-1" key={index}>
-              <div className="rounded-md animate-pulse bg-slate-500 h-52"></div>
+              <div className="rounded-md animate-pulse bg-slate-500 h-80 md:h-64 lg:h-52 mb-2"></div>
               <p className="w-48 mt-2 h-5 rounded-md animate-pulse bg-slate-500"></p>
             </div>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-4 mt-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-4 ">
           {data.map((photo) => (
             <GalleryItem key={photo.id} photo={photo} />
           ))}

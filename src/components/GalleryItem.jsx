@@ -7,7 +7,7 @@ const GalleryItem = ({ photo }) => {
       <LazyLoadImage
         src={photo.download_url}
         alt={photo.id}
-        className="rounded-lg object-cover"
+        className="mb-2 rounded-lg object-cover transition-all delay-200 md:hover:scale-105 hover:cursor-pointer"
       />
       <span>{photo.author}</span>
     </div>
